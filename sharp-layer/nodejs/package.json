@@ -1,0 +1,15 @@
+{
+  "name": "SharpLambdaLayer",
+  "version": "1.0.0",
+  "description": "Lambda layer for Sharp image resizing",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "sharp": "^0.21.3"
+  }
+}

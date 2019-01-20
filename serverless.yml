@@ -1,0 +1,28 @@
+service: sharp-lambda-layer
+
+# frameworkVersion: "=1.0.0"
+
+provider:
+  name: aws
+  runtime: nodejs8.10
+  stage: dev
+  region: us-west-2
+
+layers: 
+  sharpImageResize:
+    path: sharp-layer
+    description: Sharp image resize layer
+    name: SharpImageResize
+    compatibleRuntimes: 
+      - nodejs8.10
+
+
+functions:
+  sharp:
+    handler: handler.sharp
+    events:
+      - http:
+          path: sharp
+          method: get 
+    layers:
+      - {Ref: SharpImageResizeLambdaLayer}
